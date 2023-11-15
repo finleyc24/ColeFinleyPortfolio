@@ -30,3 +30,11 @@ h2 {
     padding: 10px;
     margin-bottom: 20px;
 }
+
+.headshot {
+    display: block;
+    width: 25%;
+    max-width: 200px;
+    border-radius: 50%;
+    margin: 20px auto;
+}
