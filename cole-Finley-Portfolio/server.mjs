@@ -1,7 +1,8 @@
-// server.js or server.mjs
+// server.mjs
 import express from 'express';
-import { join, dirname } from 'path';
+import cors from 'cors';
 import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -9,22 +10,18 @@ const __dirname = dirname(__filename);
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Serve static files from the 'public' directory
-app.use(express.static(join(__dirname, 'public')));
+// Enable CORS for all routes
+app.use(cors());
 
-// Route for serving the index.html file
-app.get('/', (_req, res) => {
-  res.sendFile(join(__dirname, 'public', 'index.html'));
+// Serve static files from the 'public' folder
+app.use(express.static(new URL('public', import.meta.url).pathname));
+
+app.get('/', (req, res) => {
+  res.sendFile(new URL('public/index.html', import.meta.url).pathname);
 });
 
-const server = app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
-});
+// Add more routes or middleware as needed
 
-// Handle process termination gracefully
-process.on('SIGINT', () => {
-  server.close(() => {
-    console.log('Server terminated');
-    process.exit(0);
-  });
+app.listen(port, () => {
+  console.log(`Server is running on port http://localhost:${port}`);
 });
