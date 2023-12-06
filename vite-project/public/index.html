@@ -4,14 +4,14 @@
         <link rel="stylesheet" href="style.css" />
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="script.js"></script>
         <title>Cole Finley Portfolio</title>
     </head>
 
     <body>
         <header>
             <div class="container">
-                <h1>Cole Finley</h1>
-                <p>Current student at Hanover College</p>
+                <h1 id="hoverElement">Cole Finley</h1>
             </div>
         </header>
 
@@ -20,38 +20,30 @@
                 <h2>About Me</h2>
                 <img
                     src="/images/headshot.jpg"
-                    alt="Cole Finley Headhsot"
+                    alt="Cole Finley Headshot"
                     class="headshot"
                 />
                 <p>
                     Experienced in HTML, CSS, JavaScript, GitHub, Java, JavaFX,
                     Python, NextJS, ReactJS, IntelliJ. Excel in leadership roles
-                    such as president of Lambda Chi Alpha, captain of mens
+                    such as president of Lambda Chi Alpha, captain of men's
                     lacrosse team, student athletic trainer, and computer
-                    science tutor. Posses strong time management skills.
+                    science tutor. Possess strong time management skills.
                 </p>
             </div>
         </section>
 
         <section id="projects">
-            <div class="container">
-                <h2>Projects</h2>
-                <!-- Add my projects here-->
-                <div class="project">
-                    <h3>Senior Project</h3>
-                    <p>Hanover College EAP app</p>
-                </div>
-            </div>
+            <button id="showProjectsButton" onclick="showProjects()">
+                Show Projects
+            </button>
         </section>
 
         <section id="contact">
             <div class="container">
-                <h2>Contact Me</h2>
-                <p>Email: colefinley66@gmail.com</p>
-                <p>Phone: (540) 748-2655</p>
+                <button id="contactButton">Show Contact Information</button>
                 <!-- Add more contact info here-->
 
-                <!-- Add Social media here-->
                 <div class="social-media">
                     <a
                         href="https://www.linkedin.com/in/cole-finley-259541254/"

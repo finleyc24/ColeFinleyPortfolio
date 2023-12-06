@@ -10,6 +10,26 @@ body {
     padding: 20px;
 }
 
+/* Style for the button */
+#showProjectsButton {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Style for the projects container */
+#projectsContainer {
+    text-align: center; /* Center the content horizontally */
+    margin: 50px auto; /* Add margin for better spacing and center vertically */
+    max-width: 600px; /* Set a maximum width to prevent the container from stretching too wide */
+}
+
+/* Style for individual project items */
+#projectsContainer div {
+    margin-bottom: 20px; /* Add margin between project items for better spacing */
+    border: 1px solid #ccc; /* Add a border for visual separation */
+    padding: 10px; /* Add padding for better visual appearance */
+}
+
 header {
     background-color: #333;
     color: white;
