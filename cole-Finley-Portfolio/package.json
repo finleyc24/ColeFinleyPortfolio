@@ -1,0 +1,16 @@
+{
+    "name": "cole-finley-portfolio",
+    "version": "1.0.0",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "vite": "^5.0.0"
+    },
+    "dependencies": {
+        "express": "^4.18.2"
+    }
+}
