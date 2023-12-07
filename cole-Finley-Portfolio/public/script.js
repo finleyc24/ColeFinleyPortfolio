@@ -56,9 +56,15 @@ function displayProjects(container) {
   
 
 window.onload = function() {
+    
     setTimeout(function() {
         alert('Welcome to Cole Finley\'s Portfolio!');
     }, 3000);
+
+    var showProjectsButton = document.getElementById('showProjectsButton');
+    if (showProjectsButton) {
+        showProjectsButton.addEventListener('click', showProjects);
+    }
 
     var contactButton = document.getElementById('contactButton');
     if (contactButton) {
