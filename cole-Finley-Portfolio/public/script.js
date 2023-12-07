@@ -1,18 +1,4 @@
-var projects = [
-    {
-        name: 'Senior Project: Hanover College EAP app',
-        description: 'Developed a web app for Emergency Action Plans at Hanover College.',
-        technologies: ['NextJS','React','Bootstrap','VS Code']
-    },
-    {
-        name: 'Web Development: Personal Portfolio',
-        description: 'Built a personal portfolio website to showcase skills and projects.',
-        technologies: ['HTML', 'CSS', 'JavaScript']
-    }
-];
-
 var isElementAdded = false;
-
 
 function showContactInformation() {
     var contactInfo = "Email: colefinley66@gmail.com\nPhone: (540) 748-2655";
@@ -45,14 +31,31 @@ function showProjects() {
 }
 
 function displayProjects(container) {
-    projects.forEach(function(project) {
-        var projectDiv = document.createElement('div');
-        projectDiv.innerHTML = `<strong>${project.name}</strong><br>
-                                <em>${project.description}</em><br>
-                                Technologies: ${project.technologies.join(', ')}`;
-        container.appendChild(projectDiv);
-    });
-}
+    // Fetch project data from the API endpoint
+    fetch('/api/projects')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Failed to fetch projects. Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((projects) => {
+        if (projects.length === 0) {
+          container.innerHTML = 'No projects available.';
+          return;
+        }
+  
+        projects.forEach(function (project) {
+          var projectDiv = document.createElement('div');
+          projectDiv.innerHTML = `<strong>${project.name}</strong><br>
+                                  <em>${project.description}</em><br>
+                                  Technologies: ${project.technologies.join(', ')}`;
+          container.appendChild(projectDiv);
+        });
+      })
+      .catch((error) => console.error('Error fetching projects:', error));
+  }
+  
 
 window.onload = function() {
     setTimeout(function() {
