@@ -13,12 +13,10 @@ function showProjects() {
             showProjectsButton.style.display = 'none';
         }
 
-        // Create a new container for projects
         var projectsContainer = document.createElement('div');
         projectsContainer.id = 'projectsContainer';
         projectsContainer.innerHTML = '<h2>Projects Information</h2>';
         
-        // Append the new container under the "Projects" section
         var projectsSection = document.getElementById('projects');
         if (projectsSection) {
             projectsSection.appendChild(projectsContainer);
